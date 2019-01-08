@@ -137,3 +137,17 @@ $mul --- multiplies field with value --- {$mul:{field:number}}
 $rename --- renames the field --- {$rename:{field1:name1,...}}
 $set --- sets the value of a field --- {$set:{field1:value1,...}}
 $unset --- removes the specified field from document --- {$unset:{field1:"",...}}
+
+
+
+DELETE___________________________
+db.collectionname.deleteOne({<<remove criteria>>})
+db.product.deleteOne({price:{$gt:10000}})
+db.collectionname.deleteMany(<<remove criteria>>)
+db.collectionname.deleteMany({}) ---delete all
+
+
+AGGREGATE FUNCTIONS__________________
+db.product_catalog.count( { "categories.sub": "smartphones" })
+db.product_catalog.distinct( "manufacturer" )
+
