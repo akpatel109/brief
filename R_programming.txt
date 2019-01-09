@@ -1,0 +1,48 @@
+logical     TRUE FALSE
+numeric     12.9,5  
+integer     2L,5L
+complex     4+3i
+character   "abc"
+raw         it will store raw bytes like "Infosys" will be 49 6e 66 6f 73 79 73
+
+
+v <- TRUE
+class(v)        --------logical
+
+
+objects in R
+------------
+Vectors       -> sequence of homogeneous data elements which are called components
+Lists         ->
+Matrices      ->
+Arrays        ->
+Factors       ->
+Data Frames   ->
+
+
+Vectors:-
+---------
+
+can be created as
+x <- 1:9
+x <- c(1,2,3,4)
+x <- c("hi","i","am","me")
+
+vector(mode="class",length= 'length')
+as.vector(x,mode='class')
+
+
+a <- as.vector(c(1,2,3,4),mode="integer")
+c <- as.vector(c(1,0,0,0,1,1),mode="logical")
+
+vector(mode='integer',length=6)
+>[1] 0 0 0 0 0 0
+vector(mode='logical',length=3)
+>[1] FALSE  FALSE FALSE
+
+is.vector(x)   -----------to check whether x is vector or not
+
+help(command)
+example(command)
+
+help.start() to start tutorial
