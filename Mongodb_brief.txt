@@ -151,3 +151,51 @@ AGGREGATE FUNCTIONS__________________
 db.product_catalog.count( { "categories.sub": "smartphones" })
 db.product_catalog.distinct( "manufacturer" )
 
+db.product_catalog.aggregate( [
+	{ $project: { _id: 0, manufacturer: 1, price: 1 } },
+	{ $group: { _id: "$manufacturer", totalPrice: { $sum: "$price" } } }
+] )
+------$project is used to specify which fields are required for performing the aggregation.
+------$group is used to group the fields by value and then perform some aggregation
+We can use $sum:1 to count the total number of documents matching the group criteria. In this case, the count of products grouped by each manufacturer.
+db.product_catalog.aggregate( [
+	{ $project: { _id: 0, manufacturer: 1, price: 1 } },
+	{ $group: { _id: "$manufacturer", totalPrice: { $sum:1 } } }
+] )
+
+db.product_catalog.aggregate( [
+	{ $sort : { price: 1 } },
+	{ $limit: 5},
+	{ $out: "FiveCheapestMobiles"}
+] )
+
+-----$sort is used on the price to specify sort by ascending (1) or descending (-1)
+-----$out is used to specify the name of the collection in which the matching documents will be stored.
+
+
+INDEXES-------------------------------------------------------------------
+db.product_catalog.createIndex(
+	    { price:-1 })
+--- To create index over price
+db.product_catalog.createIndex(
+		{ price:1, rating:-1 })
+---Compound index.... 1 and -1 are showing directions....ascending(1) and descending(-1)
+
+TEXT INDEX______________
+db.product_catalog.createIndex(
+	{categories:"text"})
+	
+creating text index over catagories field
+
+db.product_catalog.find(
+	{ $text:{ $search:"smartphones"}})
+
+db.collection_name.getIndexes()  ---to see all indexes with their name and key
+
+---drop index
+db.collection_name.dropIndex( "colors_1" ) ---name of index
+db.collection_name.dropIndex( { colors:1 } )  ---- name of field having index
+
+---drop all indexes
+db.collection_name.dropIndexes() ---All indexes except the default index on _id field will be deleted.
+
