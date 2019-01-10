@@ -1,3 +1,18 @@
+R is case Sensitive
+
+
+
+ctrl+l -> clear screen
+
+dir() -> content of working directory
+getwd() -> working directory
+setwd(directory) -> change current working directory
+history(number of last commands) -> shows that many history command
+
+b = as.integer(a)
+class(b) ---> integer #gives datatype of variable
+c = is.integer(b) ---> checks whether it is integer or not and returns TRUE or FALSE
+
 logical     TRUE FALSE
 numeric     12.9,5  
 integer     2L,5L
