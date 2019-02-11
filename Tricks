@@ -1,0 +1,5 @@
+Python
+a = [*map(int,input().split())] # to read line and convert into int list
+
+Java >8
+int[] a = Arrays.stream(s.split(" ")).mapToInt(Integer::parseInt).toArray(); // to convert a string to an array
