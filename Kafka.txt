@@ -1,0 +1,35 @@
+#Introduction
+Kafka is kind of a messaging system.
+  Kafka Server - It is the broker who stores the messages, get the messages from producers and let them be consumed by consumers
+  Producers - It produces the messages and send them to broker/cluster
+  Consumers - It consumes the messages
+
+Kafka is distributed application/platform
+Kafka is fault-tolerant.
+  What: Ability to continue operating without interruption when one or more of its components fail.
+  How: Cluster messages are replicated in multiple brokers based of Replication factor
+Kafka is scalable.
+  How: You can add new brokers
+  
+  
+#Architecture
+Kafka Server - 
+  Every Kafka Server has multiple topics
+  Every topic can have multiple partitions
+  Producer will send message to topics
+
+Consumer Group - 
+  Every grp can have multiple consumers
+  Every consumer can consume from one topic
+  Consumer has to be assiciated to a consumer group
+  
+ZooKeeper -
+  It is distributed, open-source configuration, synchronization service
+  It will have cluster information, details on which messaged has been consumed by which consumer
+  It also has details on topic configuration
+  
+
+#Installation - 
+  Download Kafka from Apache Kafka site.
+  
+  
