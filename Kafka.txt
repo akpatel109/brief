@@ -30,6 +30,10 @@ ZooKeeper -
   
 
 #Installation - 
-  Download Kafka from Apache Kafka site.
+  Download Kafka from Apache Kafka site. Download the binary one
+  download zookeeper.
+  open .conf/zoo.cfg and change the datadir to ur zookeeper root path and run command ".\bin\zkServer.cmd .\conf\zoo.cfg" it will start zookeeper service
+  open .\config\server.properties and change the log_dir to kafka_folder/kafka-logs and run ".\bin\windows\kafka-server-start.bat .\config\server.properties" it will start kafka server
+  
   
   
